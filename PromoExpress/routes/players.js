@@ -58,6 +58,8 @@ router.delete('/:id', function(req, res) {
    })
 });
 
+
+//TODO fix toeveogen/verwijderen teams
 router.put('/:id', function(req, res) {
    var id = req.params.id;
    var body = req.body

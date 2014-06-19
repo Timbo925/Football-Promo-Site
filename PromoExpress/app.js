@@ -15,6 +15,7 @@ var players = require('./routes/players');
 var app = express();
 
 mongoose.connect('mongodb://localhost:27017')
+mongoose.set('debug', true)
 
 // view engine setup
 app.set('port', process.env.PORT || 3002);

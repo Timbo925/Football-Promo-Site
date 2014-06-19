@@ -4,10 +4,20 @@ var playerSchema = require('../model/player').playerSchema
 var Player = require('../model/team').Player
 
 var teamSchema = mongoose.Schema({
-   name   : String,
-   ranking: Number,
+   name   : {type: String, required: true},
+   country: {type: String, required: true},
    players : [{type: ObjectId, ref: 'player'}]
    })
+
+teamSchema.pre('remove', function (next) {
+   this.model('player').update(
+      {_id : {$in: this.player}},
+      {$pull : {players : this._id}},
+      {multi: true},
+      next
+   );
+});
+
 
 var Team = mongoose.model('team', teamSchema);
 
