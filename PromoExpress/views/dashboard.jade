@@ -13,8 +13,7 @@ html
           div.row
              div.col-lg-8
                 div.panel.panel-default
-                   div.panel-heading
-                      Table Example
+                   div.panel-heading Player Table
                    div.panel-body
                       div.table-responsive
                          table#dataTables1.table.table-striped.table-bordered.table-hover
@@ -28,6 +27,23 @@ html
                                      td Loading...
                                      td Loading...
                                      td Loading...
+                div.panel.panel-default
+                   div.panel-heading
+                      | New Player
+                   div.panel-body
+                      div.form
+                         div.form-group
+                            label Name
+                            input.form-control
+                            br
+                            label Country
+                            select#countryOptions.form-control(multiple)
+                               option Belgie
+                               option Brazilie
+                               option Spanje
+                      button.btn.btn-default(type = 'submit') Submit
+                      &nbsp
+                      button.btn.btn-default(type = 'reset') Reset
 
              // end div-log-8
              div.col-lg-4
